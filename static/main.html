@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <title>Фінансовий помічник</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="icon" href="media/favicon.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="scripts/main.js" defer></script>
+    </head>
+    <body>
+        <div id="bg"> <img id="logo" src="media/LoginLogo.svg" class="unselectable" draggable="false"></div>
+        <div id="header">
+            <button class="menu-button">Графіки</button>
+            <button class="menu-button" id="show-add-btn">Додати запис</button>
+            <button class="menu-button" id="export-to-csv">Експорт</button>
+            <button class="menu-button" id="exit-btn">Вихід</button>
+        </div>
+        <div id="plot-holder">
+            <div id="category-pie" style="width: 100%; height: 100%;"></div>
+            <div id="date-histogram" style="width: 100%; height: 100%;"></div>
+        </div>
+        <div id="expence-aera">
+            <div id="expence-filters">
+                <div class="expence">
+                    <div class="ex-filter unselectable sort-def" data-sort="_date" id="ex-date-filter">Дата</div>
+                    <div class="ex-filter unselectable sort-def" data-sort="place" id="ex-place-filter">Місце</div>
+                    <div class="ex-filter unselectable sort-def" data-sort="category" id="ex-category-filter">Категорія</div>
+                    <input type="text" class="ex-dataholder" placeholder="Пошук" id="ex-name-filter">
+                    <div class="ex-filter unselectable sort-def" data-sort="val" id="ex-value-filter">Сальдо</div>
+                </div>
+            </div>
+            <div id="expence-list">
+
+            </div>
+        </div>
+        <div id="add-record" style="display: none;">
+            <div id="add-record-form">
+                <input type="date" id="nr-date">
+                <input type="number" id="nr-val" step="0.01" placeholder="Сальдо">
+                <input type="text" id="nr-category" placeholder="Категорія">
+                <input type="text" id="nr-place" placeholder="Місце">
+                <input type="text" id="nr-caption" placeholder="Назва трати/прибутку">
+                <button id="add-record-btn" class="fix-width">Додати запис</button>
+                <button id="cancel-record-btn" class="fix-width">Скасувати</button>
+            </div>
+        </div>
+    </body>
+</html>

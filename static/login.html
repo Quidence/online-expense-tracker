@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <title>Фінансовий помічник</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="icon" href="media/favicon.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="scripts/login.js" defer></script>
+    </head>
+    <body>
+        <div id="bg"> <img id="logo" src="media/LoginLogo.svg" draggable="false"></div>
+        <div id="form-area">
+            <div id="form-holder">
+                <button id="switch-to-login" type="button">Є акаунт?</button>
+                <button id="switch-to-registration" type="button">Немає акаунта?</button>
+                <div id="registr-form">
+                    <input id="reg-login" name="login" type="text" placeholder="Логін"><br>
+                    <input id="reg-pass"  name="password" type="password" placeholder="Пароль"><br>
+                    <button id="registration-btn" type="submit">Створити акаунт</button><br>
+                </div>
+                <div id="login-form">
+                    <input id="log-login"  name="login" type="text" placeholder="Логін"><br>
+                    <input id="log-pass"   name="password" type="password" placeholder="Пароль"><br>
+                    <button id="login-btn" type="submit">Увійти</button><br>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

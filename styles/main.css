@@ -1,0 +1,262 @@
+* {
+    --main-bg: rgba(48, 76, 95, 0.7);
+    --alt-bg: rgba(39, 169, 255, 0.7);
+    --button-bg: rgba(109, 121, 139, 0.26);
+    
+    --desc-bg: linear-gradient(0deg, rgba(39, 169, 255,0.7) 0%, rgba(255,39,39,0.7) 100%);
+    --asc-bg: linear-gradient(180deg, rgba(39, 169, 255,0.7) 0%, rgba(255,39,39,0.7) 100%);
+
+
+    --def-padding: 0.5rem;
+    --def-margin: 0.4rem;
+    --def-border-radius: 0.6rem;
+
+    --input-width: 25vw;
+
+    --form-width: 40vw;
+    
+    /* --registration: 0; */
+
+    font-size: large;
+
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+::-ms-reveal{
+    display: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#logo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: calc(var(--def-margin) * 5);
+    width: var(--form-width);
+    filter: drop-shadow(0px 0px 7px #000000);
+}
+
+#bg {
+    z-index: -2;
+    background-image: url("../media/loginback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+#form-area {
+    background-color: var(--main-bg);
+    backdrop-filter: blur(0.5vh);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: calc(100vw - var(--form-width));
+    box-shadow: 0px 0px 1vw #000000;
+    overflow: hidden;
+}
+
+input {
+    background-color: var(--button-bg);
+    backdrop-filter: blur(0.1vh);
+    color: aliceblue;
+    border-radius: var(--def-border-radius);
+    margin: var(--def-margin);
+    padding: var(--def-padding);
+    width: calc(100% - var(--def-margin) * 2 - var(--def-padding) * 2);
+    filter: drop-shadow(0px 0px 4px #0d1218);
+}
+
+input:-internal-autofill-selected {
+    background-color: var(--button-bg);
+    color: aliceblue;   
+}
+
+button {
+    background-color: rgba(168, 185, 211, 0.26);
+    backdrop-filter: blur(0.1vh);
+    color: aliceblue;
+    border-radius: var(--def-border-radius);
+    margin: var(--def-margin);
+    padding: var(--def-padding);
+    width: calc(var(--input-width) - var(--def-margin) - var(--def-padding));
+    transition: transform 0.1s ease-in-out;
+}
+
+button:hover{
+    transform: scale(102%);
+}
+
+button:active{
+    transform: scale(98%) !important;
+}
+
+#login-form {
+    width: var(--input-width);
+    position: absolute;
+    top: calc(50vh - var(--def-margin) * 3 - var(--def-padding) * 3 - 1.5rem);
+    left: calc(var(--form-width) / 2 - var(--input-width) / 2);
+}
+
+#registr-form {
+    width: var(--input-width);
+    position: absolute;
+    top: calc(50vh - var(--def-margin) * 3 - var(--def-padding) * 3 - 1.5rem);
+    left: calc(var(--form-width) / 2 - var(--input-width) / 2 + var(--form-width));
+    
+}
+
+#form-holder{
+    position: fixed;
+    left: calc( var(--form-width) * var(--registration));
+    transition: left 0.5s ease-in-out;
+    width: calc(var(--form-width) * 2);
+}
+
+#switch-to-login {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: fit-content;
+    background-color: #5f56ff;
+}
+
+#switch-to-registration {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: fit-content;
+    background-color: #45b93c;
+}
+
+#login-btn:active {
+    background-color: #5f56ff !important;
+}
+
+/* Main section */
+
+.ex-dataholder {
+    margin: calc(var(--def-margin) / 2);
+    border-radius: var(--def-border-radius);
+    padding: calc(var(--def-padding) / 2);
+    background-color: var(--main-bg);
+    color:aliceblue;
+    text-align: center;
+}
+
+.expence {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 3fr 1fr;
+    margin: calc(var(--def-margin) / 3);
+    border-radius: var(--def-border-radius);
+    background-color: var(--main-bg);
+}
+
+#ex-name-filter {
+    width: calc(100% - var(--def-margin) - var(--def-padding));
+}
+
+.ex-filter {
+    margin: calc(var(--def-margin) / 2);
+    border-radius: var(--def-border-radius);
+    padding: calc(var(--def-padding) / 2);
+    color:aliceblue;
+    text-align: center;
+    cursor:pointer;
+    transition: background 0.3s;
+}
+
+.sort-asc {
+    background: var(--asc-bg);
+}
+
+.sort-desc {
+    background: var(--desc-bg);
+}
+
+.sort-def {
+    background: var(--alt-bg);
+}
+
+#header {
+    position: sticky;
+    top:0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: var(--main-bg);
+}
+
+.menu-button {
+    width: calc(100% - var(--def-margin) - var(--def-padding));
+    background: none;
+}
+
+.menu-button:hover {
+    background: var(--button-bg);
+}
+
+.menu-button:active {
+    background: var(--alt-bg) !important;
+}
+
+#exit-btn:active {
+    background-color: rgb(205, 47, 47) !important;
+}
+
+[id^='ex-name-'] {
+    text-align: left;
+}
+
+div#add-record {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0b0b0b80;
+    backdrop-filter: blur(4px);
+    top:0;
+    left:0;
+    transition: opacity 0.3s;
+    opacity: var(--add-record-opacity);
+    pointer-events: var(--add-record-clickable);
+}
+
+div#add-record-form {
+    position: fixed;
+    width: 40vw;
+    right: 30vw;
+    top: 10vh;
+}
+
+#add-record-btn:hover {
+    background-color: var(--alt-bg);
+}
+
+#cancel-record-btn:hover {
+    background-color: rgb(205, 47, 47);
+}
+
+.fix-width {
+    width: calc(100% - var(--def-margin) - var(--def-padding));
+}
+
+#plot-holder {
+    display:grid;
+    height: 40vh;
+    grid-template-columns: 2fr 4fr;
+}
